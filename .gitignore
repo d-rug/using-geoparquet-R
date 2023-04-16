@@ -1,0 +1,32 @@
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# README
+README.html
+
+
+# OS index specific
+.DS_Store
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# quarto specific
+/.quarto/
+/_*.local
+/_site/
+
+# env specific
+/.venv/
+/.condaenv/
+*_cache/
+/env/
+
+

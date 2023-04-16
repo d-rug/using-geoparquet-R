@@ -1,0 +1,25 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "YOUR WORKSHOP TITLE"
+  author: "[YOUR NAME]"
+  date: "DATE"
+  
+  search: true
+  repo-url: https://github.com/d-rug/YOUR_REPO
+  downloads: [pdf]
+  chapters:
+    - index.qmd
+    - 01_intro.qmd
+    - 02_example.qmd
+  
+  sidebar:
+    logo: https://github.com/d-rug/d-rug.github.io/raw/main/DRUG_final_cobalt.png
+  site-url: https://d-rug.github.io
+
+format:
+  html:
+    theme: cosmo
+    number-sections: false
