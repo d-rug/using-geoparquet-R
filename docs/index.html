@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="[YOUR NAME]">
+<meta name="author" content="Ryan Peek">
+<meta name="dcterms.date" content="2023-04-20">
 
-<title>YOUR WORKSHOP TITLE</title>
+<title>Using geoparquet with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01_intro.html" rel="next">
+<link href="./demo.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -91,10 +92,10 @@ ul.task-list li input[type="checkbox"] {
       <img src="https://github.com/d-rug/d-rug.github.io/raw/main/DRUG_final_cobalt.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">YOUR WORKSHOP TITLE</a> 
+      <a href="./">Using geoparquet with R</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/d-rug/YOUR_REPO" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
-    <a href="./YOUR-WORKSHOP-TITLE.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+    <a href="https://github.com/d-rug/using-geoparquet-R" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Using-geoparquet-with-R.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
 </div>
     </div>
       </div>
@@ -112,12 +113,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Introduction</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./02_example.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Example</span></a>
+  <a href="./demo.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Slide Deck</span></a>
   </div>
 </li>
     </ul>
@@ -130,7 +126,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
+  <ul class="collapse">
+  <li><a href="#file-formats" id="toc-file-formats" class="nav-link" data-scroll-target="#file-formats">File Formats</a></li>
+  <li><a href="#parquet-format" id="toc-parquet-format" class="nav-link" data-scroll-target="#parquet-format"><code>.parquet</code> format</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">YOUR WORKSHOP TITLE</h1>
+<h1 class="title">Using geoparquet with R</h1>
 </div>
 
 
@@ -149,14 +149,14 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>[YOUR NAME] </p>
+             <p>Ryan Peek </p>
           </div>
   </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">Invalid Date</p>
+      <p class="date">April 20, 2023</p>
     </div>
   </div>
   
@@ -168,9 +168,35 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="overview" class="level1 unnumbered">
 <h1 class="unnumbered">Overview</h1>
-<p>YOUR DESCRIPTION, LEARNING GOALS, PREREQUISITES, ETC</p>
+<p>Using <code>geoparquet</code> as a file format with spatial data in R is a relatively new option. As spatial formats have evolved, there is generally a balance between read and write speed, and file size. There are differences between <code>raster</code> data and <code>vector</code> data, and primarily the focus of this presentation is on <code>vector</code> based data.</p>
+<section id="file-formats" class="level2">
+<h2 class="anchored" data-anchor-id="file-formats">File Formats</h2>
+<p><a href="https://rspatial.org/raster/spatial/2-spatialdata.html">Spatial formats in R</a> for vector data can be a wide variety of types, from <strong>shapefiles</strong>, <strong>kml</strong>, or simple <strong>csv</strong> of X/Y points. In R we can access and use these data with a number of packages, from the older {sp} package (see <a href="https://rspatial.org/raster/spatial/3-vectordata.html">here for more background</a>) to the more recent and widely embraced <a href="https://r-spatial.github.io/sf/">{sf}</a> package. For more info on the types of data that can be imported or exported via <a href="https://r-spatial.github.io/sf/articles/sf2.html">{sf}</a>.</p>
+</section>
+<section id="parquet-format" class="level2">
+<h2 class="anchored" data-anchor-id="parquet-format"><code>.parquet</code> format</h2>
+<p>Enter another option: <strong><code>.parquet</code></strong></p>
+<p>This is not a new format, but it is new to use within the geospatial/R world. The <code>parquet</code> format is a file type that contains a table inside similar to a <code>.csv</code> with these differences:</p>
+<ul>
+<li>However these files are stored in binary form <em>not as plain text</em></li>
+<li><code>parquet</code> files are column-oriented (unlike csv) and each column is stored <em>independently</em></li>
+<li><code>parquet</code> embeds the schema or data types/structure within the data itself</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://arrow-user2022.netlify.app/"><img src="img/parquet-columnar.png" class="img-fluid figure-img" alt="Columnar data comparison following parquets column first approach"></a></p>
+<p></p><figcaption class="figure-caption">Columnar Data</figcaption><p></p>
+</figure>
+</div>
+<p>The real benefit:</p>
+<ul>
+<li><code>parquet</code> files aren’t just about compression (though some savings here)</li>
+<li>The real benefit is speed reading/operating/writing data!</li>
+</ul>
+<p>Let’s try it out! Check out these <a href="slides/using_geoparquet.html">slides</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -411,8 +437,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01_intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-title">Introduction</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./demo.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-title">Slide Deck</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

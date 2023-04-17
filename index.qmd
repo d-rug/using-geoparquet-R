@@ -7,4 +7,31 @@ format:
 
 # Overview {.unnumbered}
 
-YOUR DESCRIPTION, LEARNING GOALS, PREREQUISITES, ETC
+Using `geoparquet` as a file format with spatial data in R is a relatively new option. As spatial formats have evolved, there is generally a balance between read and write speed, and file size. There are differences between `raster` data and `vector` data, and primarily the focus of this presentation is on `vector` based data.
+
+## File Formats
+
+[Spatial formats in R](https://rspatial.org/raster/spatial/2-spatialdata.html) for vector data can be a wide variety of types, from **shapefiles**, **kml**, or simple **csv** of X/Y points. In R we can access and use these data with a number of packages, from the older {sp} package (see [here for more background](https://rspatial.org/raster/spatial/3-vectordata.html)) to the more recent and widely embraced [{sf}](https://r-spatial.github.io/sf/) package. For more info on the types of data that can be imported or exported via [{sf}](https://r-spatial.github.io/sf/articles/sf2.html).
+
+## `.parquet` format
+
+Enter another option: **`.parquet`**
+
+This is not a new format, but it is new to use within the geospatial/R world. 
+The `parquet` format is a file type that contains a table inside similar to a `.csv` with these differences:
+
+  -   However these files are stored in binary form *not as plain text*
+  -   `parquet` files are column-oriented (unlike csv) and each column is stored *independently*
+  -   `parquet` embeds the schema or data types/structure within the data itself
+  
+
+[![Columnar Data](img/parquet-columnar.png){fig-alt="Columnar data comparison following parquets column first approach"}](https://arrow-user2022.netlify.app/)
+
+
+The real benefit: 
+  
+  - `parquet` files aren't just about compression (though some savings here)
+  - The real benefit is speed reading/operating/writing data!
+  
+  
+Let's try it out! Check out these [slides](slides/using_geoparquet.html).

@@ -30,3 +30,5 @@ README.html
 /env/
 
 
+# ignore data
+slides/data/*.parquet

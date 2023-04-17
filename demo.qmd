@@ -1,0 +1,15 @@
+---
+title: "Slide Deck"
+format: html
+---
+
+### Slides [here](slides/using_geoparquet.html)!
+
+{{< include slides/using_geoparquet.html >}}
+
+<!--
+<iframe width="780" height="500" src="slides/using_geoparquet.html" title="Slides"></iframe>
+-->
+
+*Note.* To view the slideshow in full screen mode, click inside it and press the "f" key on your keyboard.<br />
+You can also use the menu by clicking on the icon at the bottom-left of each slide.

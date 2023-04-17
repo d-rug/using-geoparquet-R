@@ -2,14 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://d-rug.github.io/index.html</loc>
-    <lastmod>2023-04-16T20:02:25.789Z</lastmod>
+    <lastmod>2023-04-17T00:45:48.490Z</lastmod>
   </url>
   <url>
-    <loc>https://d-rug.github.io/01_intro.html</loc>
-    <lastmod>2023-04-16T20:02:25.792Z</lastmod>
-  </url>
-  <url>
-    <loc>https://d-rug.github.io/02_example.html</loc>
-    <lastmod>2023-04-16T20:02:25.794Z</lastmod>
+    <loc>https://d-rug.github.io/demo.html</loc>
+    <lastmod>2023-04-17T00:45:48.493Z</lastmod>
   </url>
 </urlset>

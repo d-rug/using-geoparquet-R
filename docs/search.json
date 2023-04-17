@@ -2,36 +2,29 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "YOUR WORKSHOP TITLE",
+    "title": "Using geoparquet with R",
     "section": "",
-    "text": "Overview\nYOUR DESCRIPTION, LEARNING GOALS, PREREQUISITES, ETC"
+    "text": "Overview\nUsing geoparquet as a file format with spatial data in R is a relatively new option. As spatial formats have evolved, there is generally a balance between read and write speed, and file size. There are differences between raster data and vector data, and primarily the focus of this presentation is on vector based data."
   },
   {
-    "objectID": "01_intro.html#quarto",
-    "href": "01_intro.html#quarto",
-    "title": "Introduction",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
+    "objectID": "index.html#file-formats",
+    "href": "index.html#file-formats",
+    "title": "Using geoparquet with R",
+    "section": "File Formats",
+    "text": "File Formats\nSpatial formats in R for vector data can be a wide variety of types, from shapefiles, kml, or simple csv of X/Y points. In R we can access and use these data with a number of packages, from the older {sp} package (see here for more background) to the more recent and widely embraced {sf} package. For more info on the types of data that can be imported or exported via {sf}."
   },
   {
-    "objectID": "01_intro.html#running-code",
-    "href": "01_intro.html#running-code",
-    "title": "Introduction",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "objectID": "index.html#parquet-format",
+    "href": "index.html#parquet-format",
+    "title": "Using geoparquet with R",
+    "section": ".parquet format",
+    "text": ".parquet format\nEnter another option: .parquet\nThis is not a new format, but it is new to use within the geospatial/R world. The parquet format is a file type that contains a table inside similar to a .csv with these differences:\n\nHowever these files are stored in binary form not as plain text\nparquet files are column-oriented (unlike csv) and each column is stored independently\nparquet embeds the schema or data types/structure within the data itself\n\n\n\n\nColumnar Data\n\n\nThe real benefit:\n\nparquet files aren’t just about compression (though some savings here)\nThe real benefit is speed reading/operating/writing data!\n\nLet’s try it out! Check out these slides."
   },
   {
-    "objectID": "02_example.html#quarto",
-    "href": "02_example.html#quarto",
-    "title": "Example",
-    "section": "Quarto",
-    "text": "Quarto\nQuarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see https://quarto.org."
-  },
-  {
-    "objectID": "02_example.html#running-code",
-    "href": "02_example.html#running-code",
-    "title": "Example",
-    "section": "Running Code",
-    "text": "Running Code\nWhen you click the Render button a document will be generated that includes both content and the output of embedded code. You can embed code like this:\n\n1 + 1\n\n[1] 2\n\n\nYou can add options to executable code like this\n\n\n[1] 4\n\n\nThe echo: false option disables the printing of code (only output is displayed)."
+    "objectID": "demo.html",
+    "href": "demo.html",
+    "title": "Slide Deck",
+    "section": "",
+    "text": "Slides here!\n\nNote. To view the slideshow in full screen mode, click inside it and press the “f” key on your keyboard. You can also use the menu by clicking on the icon at the bottom-left of each slide."
   }
 ]
